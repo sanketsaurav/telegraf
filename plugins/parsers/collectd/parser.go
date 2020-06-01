@@ -128,8 +128,7 @@ func UnmarshalValueList(vl *api.ValueList, multiValue string) []telegraf.Metric 
 	switch multiValue {
 	case "split":
 		for i := range vl.Values {
-			var name string
-			name = fmt.Sprintf("%s_%s", vl.Identifier.Plugin, vl.DSName(i))
+			var name string = fmt.Sprintf("%s_%s", vl.Identifier.Plugin, vl.DSName(i))
 			tags := make(map[string]string)
 			fields := make(map[string]interface{})
 

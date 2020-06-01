@@ -1176,8 +1176,7 @@ func NewStatLine(oldMongo, newMongo MongoStatus, key string, all bool, sampleSec
 				// Get the entry with the highest lock
 				highestLocked := lockdiffs[len(lockdiffs)-1]
 
-				var timeDiffMillis int64
-				timeDiffMillis = newStat.UptimeMillis - oldStat.UptimeMillis
+				var timeDiffMillis int64 = newStat.UptimeMillis - oldStat.UptimeMillis
 
 				lockToReport := highestLocked.Writes
 

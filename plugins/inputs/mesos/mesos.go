@@ -244,9 +244,7 @@ func metricsDiff(role Role, w []string) []string {
 
 // masterBlocks serves as kind of metrics registry grouping them in sets
 func getMetrics(role Role, group string) []string {
-	var m map[string][]string
-
-	m = make(map[string][]string)
+	var m map[string][]string = make(map[string][]string)
 
 	if role == MASTER {
 		m["resources"] = []string{
